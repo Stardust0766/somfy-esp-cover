@@ -7,10 +7,10 @@
 #include <SomfyRemote.h>
 
 #define EMITTER_GPIO 2
-#define CC1101_FREQUENCY 433.42
+#define CC1101_FREQUENCY 433.42f
 #define COVER_POS_OPEN 1.0f
 #define COVER_POS_CLOSED 0.0f
-#define STATE_MACHINE_INTERVAL 0.500 // s
+#define STATE_MACHINE_INTERVAL 250 // ms
 
 namespace esphome
 {
@@ -60,7 +60,7 @@ namespace esphome
         char key[32];
         CoverState current_state;
         CoverState last_state;
-        time_t last_time;
+        uint32_t last_millis;
         float open_duration;
         float close_duration;
         float closed_position;

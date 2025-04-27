@@ -2,10 +2,10 @@
 # https://www.die-welt.net/2021/06/controlling-somfy-roller-shutters-using-an-esp32-and-esphome/
 
 external_components:
-  - source: components
-  # - source:   
-  #     type: git
-  #     url: https://github.com/Stardust0766/somfy-esp-cover
+  # - source: components
+  - source:   
+      type: git
+      url: https://github.com/Stardust0766/somfy-esp-cover
 
 esphome:
   name: somfy
@@ -14,7 +14,6 @@ esphome:
     - EEPROM
     - SPI
     #- SmartRC-CC1101-Driver-Lib@2.5.6   # https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
-    #- https://github.com/LSatan/SmartRC-CC1101-Driver-Lib#v2.5.6
     #- Somfy_Remote_Lib@0.4.1            # https://github.com/Legion2/Somfy_Remote_Lib
     - https://github.com/Stardust0766/SmartRC-CC1101-Driver-Lib#v2.5.6
     - https://github.com/Stardust0766/Somfy_Remote_Lib#v0.4.1

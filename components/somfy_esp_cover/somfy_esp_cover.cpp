@@ -9,6 +9,9 @@ namespace esphome
 
     void SomfyESPCover::setup()
     {
+      //
+      // Initialize the CC1101 wireless module
+      //
       pinMode(EMITTER_GPIO, OUTPUT);
       digitalWrite(EMITTER_GPIO, LOW);
 
@@ -16,6 +19,9 @@ namespace esphome
       ELECHOUSE_cc1101.setMHZ(CC1101_FREQUENCY);
 
 
+      //
+      // Parsing the cover parameters
+      //
       storage = new NVSRollingCodeStorage(nvs_name_, nvs_key_);
       remote = new SomfyRemote(EMITTER_GPIO, remote_code_, storage);
       
@@ -139,11 +145,14 @@ namespace esphome
     void SomfyESPCover::loop()
     {
       // Get current time and calculate time difference
-      time_t current_time = ::time(nullptr);
-      float time_difference = current_time - last_time;
+      uint32_t current_millis = millis();
+      uint32_t millis_difference = current_millis - last_millis;
 
-      if (time_difference > STATE_MACHINE_INTERVAL)
+      if (millis_difference > STATE_MACHINE_INTERVAL)
       {
+        // Get time difference to last execution in seconds
+        float time_difference = millis_difference / 1000.0;
+
         // For the case that we do not change the next state variable we keep the current state
         CoverState next_state = current_state;
 
@@ -285,7 +294,7 @@ namespace esphome
         // Store current state and time for next call
         last_state = current_state;
         current_state = next_state;
-        last_time = current_time;
+        last_millis = current_millis;
       }
     }
 

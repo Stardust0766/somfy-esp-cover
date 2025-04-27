@@ -3,3 +3,6 @@ secrets.yaml
 
 # Python cache
 __pycache__
+
+# ESPHome build directory
+.esphome
