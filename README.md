@@ -1,5 +1,5 @@
 # somfy-esp-cover
-Implementation of a time-based cover to control blinds or shutters via an ESP32 and a CC1101 wireless module.
+Implementation of a time-based cover for remote operation of RTS radio-controlled SOMFY blinds or shutters in ESPHome via an ESP32 and a CC1101 radio module.
 
 ## Installation
 * Download the somfy.yaml example from the root folder.
