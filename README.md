@@ -15,7 +15,7 @@ Implementation of a time-based cover for remote operation of RTS radio-controlle
 | ------------- | ------------- | ------------- |
 | nvs_name | No | Name of the component. Used in the NVS (non volatile storage) to store the rolling code. A string of maximum 30 characters. |
 | nvs_key | No | Key (variable name) in the NVS to store the rolling code of the specific simulated somfy remote.. A string of maximum 30 characters. |
-| remote_code | No | Code of the simulated somfy remote. Required to identify the simulated remote at the somfy cover. A six byte integer value e.g. 0x123456 |
+| remote_code | No | Code of the simulated somfy remote. Required to identify the simulated remote at the somfy cover. A 3 byte (6 nibble) integer value e.g. 0x123456 |
 | open_duration | Yes | Duration in seconds to open the cover. Omit to disable the time-based position feature. |
 | close_duration | Yes | Duration in seconds to close the cover. Omit to disable the time-based position feature. |
 | my_position | Yes | Motor position for the 'my' position. Omit to disable the 'my' position feature. If the cover isn't moving and the stop button is pressed the cover moves to this position. |
