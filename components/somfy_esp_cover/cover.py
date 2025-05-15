@@ -9,6 +9,7 @@ SomfyESPCover = somfy_esp_cover_ns.class_("SomfyESPCover", cover.Cover, cg.Compo
 CONF_NVS_NAME = "nvs_name"
 CONF_NVS_KEY = "nvs_key"
 CONF_REMOTE_CODE = "remote_code"
+CONF_INVERT_BEHAVIOR = "invert_behavior"
 CONF_OPEN_DURATION = "open_duration"
 CONF_CLOSE_DURATION = "close_duration"
 CONF_MY_POSTION = "my_position"
@@ -25,7 +26,8 @@ CONFIG_SCHEMA = cover.COVER_SCHEMA.extend(
         cv.Optional(CONF_CLOSE_DURATION, default = -1.0): cv.float_,
         cv.Optional(CONF_MY_POSTION, default = -1.0): cv.float_,
         cv.Optional(CONF_CLOSED_POSITION, default = -1.0): cv.float_,
-        cv.Optional(CONF_HALF_CLOSED_POSITION, default = -1.0): cv.float_
+        cv.Optional(CONF_HALF_CLOSED_POSITION, default = -1.0): cv.float_,
+        cv.Optional(CONF_INVERT_BEHAVIOR, default = False): cv.boolean
      }
 ).extend(cv.COMPONENT_SCHEMA)
 
@@ -43,3 +45,4 @@ async def to_code(config):
     cg.add(var.set_my_position(config[CONF_MY_POSTION]))
     cg.add(var.set_closed_position(config[CONF_CLOSED_POSITION]))
     cg.add(var.set_half_closed_position(config[CONF_HALF_CLOSED_POSITION]))
+    cg.add(var.set_invert_behavior(config[CONF_INVERT_BEHAVIOR]))

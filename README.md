@@ -21,3 +21,19 @@ Implementation of a time-based cover for remote operation of RTS radio-controlle
 | my_position | Yes | Motor position for the 'my' position. Omit to disable the 'my' position feature. If the cover isn't moving and the stop button is pressed the cover moves to this position. |
 | closed_position | Yes | Motor position until where the cover (shutter) is still closed. Omit to disable this feature. |
 | half_closed_position | Yes | Motor position where the cover (shutter) is half closed. Omit to disable this feature. |
+| invert_behavior | Yes | Invert behavior of the remote control. This seems to be needed for awnings. |
+
+</br>
+</br>
+
+# Compile locally
+
+For developing purpose it is useful to install ESPHome loacally so that you can compile your component locally before testing it on your Home Assistent system.
+For installtion please refer to: https://esphome.io/guides/installing_esphome
+
+To compile the **somy-esp-cover** component:
+
+```
+cd <Path to your local Git reposizories>\somfy-esp-cover
+esphome.exe compile .\somfy.yaml
+```

@@ -84,6 +84,7 @@ sensor:
 #                         If the cover isn't moving and the stop button is pressed the cover moves to this position.
 # closed_position:        Motor position until where the cover (shutter) is still closed (omit to disable this feature).
 # half_closed_position:   Motor position where the cover (shutter) is half closed (omit to disable this feature).
+# invert_behavior:        True or False. Invert behavior of the remote control. This seems to be needed for awnings (omit to deactivate inversion).
 cover:
   - platform: somfy_esp_cover
     id: "somfy1"

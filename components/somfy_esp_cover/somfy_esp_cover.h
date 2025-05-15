@@ -32,6 +32,7 @@ namespace esphome
         void set_my_position(float my_position) {my_position_ = my_position;};
         void set_closed_position(float closed_position) {closed_position_ = closed_position;};
         void set_half_closed_position(float half_closed_position) {half_closed_position_ = half_closed_position;};
+        void set_invert_behavior(bool invert_behavior) {invert_behavior_ = invert_behavior;};
     
         void program(); 
 
@@ -100,6 +101,7 @@ namespace esphome
         float my_position_;
         float closed_position_;
         float half_closed_position_;
+        bool invert_behavior_;
     };
 
   } // namespace somfy_esp_cover

@@ -183,7 +183,14 @@ namespace esphome
             if (current_state != last_state)
             {
               logInformation("MOVE UP");
-              sendCC1101Command(Command::Up);
+              if (invert_behavior_)
+              {
+                sendCC1101Command(Command::Down);
+              }
+              else
+              {
+                sendCC1101Command(Command::Up);
+              }
             }
             if (supports_position)
             {
@@ -211,7 +218,14 @@ namespace esphome
             if (current_state != last_state)
             {
               logInformation("MOVE UP");
-              sendCC1101Command(Command::Up);
+              if (invert_behavior_)
+              {
+                sendCC1101Command(Command::Down);
+              }
+              else
+              {
+                sendCC1101Command(Command::Up);
+              }
             }
             if (supports_position)
             {
@@ -239,7 +253,14 @@ namespace esphome
             if (current_state != last_state)
             {
               logInformation("MOVE DOWN");
-              sendCC1101Command(Command::Down);
+              if (invert_behavior_)
+              {
+                sendCC1101Command(Command::Up);
+              }
+              else
+              {
+                sendCC1101Command(Command::Down);
+              }
             }
             if (supports_position)
             {
@@ -267,7 +288,14 @@ namespace esphome
             if (current_state != last_state)
             {
               logInformation("MOVE DOWN");
-              sendCC1101Command(Command::Down);
+              if (invert_behavior_)
+              {
+                sendCC1101Command(Command::Up);
+              }
+              else
+              {
+                sendCC1101Command(Command::Down);
+              }
             }
             if (supports_position)
             {
